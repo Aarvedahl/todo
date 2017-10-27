@@ -27,4 +27,9 @@ public class NoteBean implements Serializable{
     public void setNotes(List<Note> notes) {
         this.notes = notes;
     }
+
+    public void saveNote(Note note) {
+        noteFacade.edit(note);
+    }
+
 }

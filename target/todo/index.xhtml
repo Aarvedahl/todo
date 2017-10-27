@@ -9,16 +9,16 @@
     <h:head></h:head>
     <h:body>
         <p:dataTable var="note" value="#{noteBean.getNotes()}">
-            <p:column headerText="Id">
-                <h:outputText value="#{note.noteid}" />
-            </p:column>
             <p:column headerText="Description">
                 <h:outputText value="#{note.description}" />
             </p:column>
             <p:column headerText="Tags">
-                <p:dataList value="#{t.getTags()}" var="tag">
+                <p:dataList value="#{note.getTags()}" var="tag">
                     <h:outputText value="#{tag.name}" />
                 </p:dataList>
+            </p:column>
+            <p:column headerText="Done">
+                <p:selectBooleanCheckbox value="#{note.done}" />
             </p:column>
         </p:dataTable>
     </h:body>

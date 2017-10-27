@@ -21,10 +21,12 @@ public class NoteFacade {
         cq.select(cq.from(Note.class));
         return em.createQuery(cq).getResultList();
     }
-  /*
-    public List<Note> findHalf() {
-        return em.createQuery("SELECT * FROM Note n", Note.class).getResultList();
-    }
-     */
 
+    public void create(Note note) {
+        em.persist(note);
+    }
+
+    public void edit(Note note) {
+        em.merge(note);
+    }
 }
