@@ -48,9 +48,7 @@ public class Note {
     public void setDone(boolean done) {
         this.done = done;
     }
-    public List<Tag> getTags() {
-        System.out.println(tags.size());
-        return tags; }
+    public List<Tag> getTags() { return tags; }
 
     public void setTags(List<Tag> tags) { this.tags = tags; }
 }
